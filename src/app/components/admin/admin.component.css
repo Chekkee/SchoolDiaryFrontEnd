@@ -1,0 +1,34 @@
+.adminBigBox {
+    width: 90%;
+    border-radius: 20px;
+    margin: 25px auto;
+    min-height: 300px;
+    border: #243e16;
+    background-color: #dfedd6;
+    color: #243e16;
+    padding: 2%;
+}
+
+.optionButtonDiv {
+    width: 25%;
+    margin: 20px 5%;
+}
+
+.studentButtonDiv{
+    width: 40%;
+    margin: 20px auto;
+}
+
+.groupButtons {
+    width: 100%
+}
+
+.teacherButtonDiv {
+    width: 40%;
+    margin: 20px auto;
+}
+
+.logs {
+    width: 90%;
+    margin: 20px auto;
+}

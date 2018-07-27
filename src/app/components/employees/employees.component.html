@@ -1,0 +1,14 @@
+<div class="card cardDiv">
+  <h1>Director:</h1>
+  <h3>Ceda Ribic</h3>
+</div>
+<div *ngIf="teachers">
+  <div class="professorBox">
+    <h3>Professors:</h3>
+    <div *ngFor='let employee of employees'>{{employee}}</div>
+
+    <div class="card cardDiv" *ngFor="let teacher of teachers">
+      <h4 class="card-title">{{teacher.firstName}} {{teacher.lastName}}</h4>
+    </div>
+  </div>
+</div>

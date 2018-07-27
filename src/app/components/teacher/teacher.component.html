@@ -1,0 +1,56 @@
+<div *ngIf="teacher" class="teacherBigBox">
+  <div>
+    <button *ngIf="user.role === 'admins'" class="btn btn-success btn-sm backButton" (click)="goBack()">Back</button>
+    <div>
+      <h1>Basic teacher information:</h1>
+      <h1 class="NameAndSurename">Teacher: {{teacher.firstName}} {{teacher.lastName}}</h1>
+      <h3>Username: {{teacher.userName}}</h3>
+      <h4>Subject fond: {{teacher.subjectFond}}</h4>
+      <h5>Email: {{teacher.email}}</h5>
+      <h5>Mobile phone: {{teacher.mobilePhone}}</h5>
+    </div>
+    <div>
+      <table *ngFor="let subject of teacher.subjectsWithStudents" class="table table-bordered myTable ">
+        <th>Subject: {{subject.subjectName}}</th>
+        <tr>
+          <td *ngIf="user.role === 'admins'"><button class="btn btn-danger btn-sm" type="button" (click)="removeSubject(teacher.id, subject)">Remove subject</button></td>
+          <td>Students:</td>
+          <td>Grades:</td>
+        </tr>
+        <tr *ngFor="let student of subject.studentsWithGrades">
+          <td>
+            <div>
+              <a routerLink="/students/{{student.studentId}}" class="studentName">{{student.studentFirstName}} {{student.studentLastName}}</a>
+              <a class="btn btn-success btn-sm" routerLink="subject/{{subject.subjectId}}/student/{{student.studentId}}">Add new grade</a>
+            </div>
+          </td>
+          <td>
+            <div *ngFor="let grade of student.grades">{{grade.gradeValue}}
+              <a routerLink="/grade-edit/{{grade.id}}" class="btn btn-warning btn-sm">Edit grade</a>
+              <button type="button" (click)="deleteGrade(grade)" class="btn btn-danger btn-sm">Delete grade</button>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div *ngIf="user.role === 'admins'">
+        <button type="button" class="btn btn-success btn-sm" (click)="getRemainingSubjects(teacher.id)">Add subject</button>
+        <button type="button" class="btn btn-warning btn-sm" (click)="clearRemainingSubjects()">Clear remaining subjects</button>
+        <div *ngIf="teacher.remainingSubjects.length > 0">
+          <table>
+            <th>Remaining subjects (add subject by clicking a button)</th>
+            <tr>
+              <td>Subject name</td>
+              <td></td>
+            </tr>
+            <tr *ngFor="let subject of teacher.remainingSubjects">
+              <td>{{subject.subjectName}}</td>
+              <td>
+                <button type="button" class="btn btn-success btn-sm" (click)="addSubject(teacher.id, subject)">Add subject</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

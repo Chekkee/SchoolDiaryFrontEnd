@@ -1,0 +1,59 @@
+.bigBox {
+    border: 1px solid #243e16;
+    border-radius: 20px;
+    width: 60%;
+    max-width: 400px;
+    margin: 100px auto 50px auto;
+    min-height: 200px;
+    position: relative;
+    background-color:  #dfedd6;
+}
+
+.loginAvatar {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: -50px;
+    right: calc(50% - 50px);
+}
+
+.label{
+    font-weight: 600;
+}
+
+.firstInputField {
+    margin-top: 50px;
+    width: 80%;
+    margin: 50px auto 10px auto;
+}
+
+.secondInputField {
+    width: 80%;
+    margin: 5px auto;
+}
+
+.label {
+    color: #243e16;
+    width: 80%;
+    margin: 5px auto;
+}
+
+.submitButton {
+    color: #243e16;
+    font-weight: 600;
+    background-color: #cbe8ba;
+    border: #243e16 1px solid;
+    border-radius: 15px;
+    width: 50%;
+    margin: 25px 25%;
+}
+
+.logoutButton {
+    color: #243e16;
+    font-weight: 600;
+    background-color: #cbe8ba;
+    border: #243e16 1px solid;
+    border-radius: 15px;
+    width: 100px;
+    margin: 25px;
+}

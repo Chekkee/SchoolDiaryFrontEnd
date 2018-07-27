@@ -1,0 +1,26 @@
+<div *ngIf="subject">
+  <div class="bigBox">
+    <form (submit)="editSubject()">
+      <div class="form-group firstInputField">
+        <label class="label" for="subjectName">Subject name</label>
+        <input type="text" class="form-control" id="subject" placeholder="{{subject.subjectName}}" required tabindex="1" #firstName
+          [(ngModel)]="subject.subjectName" name="subject">
+      </div>
+
+      <div class="form-group firstInputField">
+        <label class="label" for="subjectFond">Subject fond</label>
+        <input type="numer" class="form-control" id="subjectFond" placeholder="{{subject.subjectFond}}" required tabindex="2" #subjectFond
+          [(ngModel)]="subject.subjectFond" name="subjectFond">
+      </div>
+
+      <div class="form-group firstInputField">
+        <label class="label" for="year">Year</label>
+        <input type="numer" class="form-control" id="year" placeholder="{{subject.year}}" required tabindex="3" #year [(ngModel)]="subject.year"
+          name="year">
+      </div>
+
+      <button class="btn btn-success" type="submit" tabindex="4">Submit</button>
+      <button class="btn btn-warning" type="button" (click)="goBack()">Go back</button>
+    </form>
+  </div>
+</div>

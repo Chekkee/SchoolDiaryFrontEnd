@@ -1,0 +1,32 @@
+.teacherBigBox {
+    width: 90%;
+    border-radius: 20px;
+    margin: 25px auto;
+    min-height: 300px;
+    border: #243e16;
+    background-color: #dfedd6;
+    color: #243e16;
+}
+
+
+.backButton {
+    margin: 20px;
+}
+
+.NameAndSurename {
+    text-align: center;
+}
+
+.back {
+    margin: 20px;
+}
+
+.myTable {
+    border: #243e16 solid 1px;
+}
+
+.studentName {
+    color: #243e16;
+    size: 1.2em;
+    margin: 5px;
+}

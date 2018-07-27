@@ -1,0 +1,8 @@
+<div *ngIf="subject">
+  <div class="subjectBigBox">
+    <button *ngIf="user.role === 'admins'" (click)="goBack()">Back</button>
+    <h2>Basic subject info</h2>
+    <h4>Subject name: {{subject.subjectName}}</h4>
+    <h4>Year: {{subject.year}}</h4>
+  </div>
+</div>

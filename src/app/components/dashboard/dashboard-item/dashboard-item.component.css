@@ -1,0 +1,22 @@
+.picture {
+    width: 100%;
+    background-color: #cbe8ba;
+}
+
+.date {
+    position: absolute;
+    bottom: 1%;
+    RIGHT: 2%
+}
+
+.box {
+    margin: 0px;
+    padding: 5px;
+    min-height: 150px;
+    margin: 5px 10px;
+    border-radius: 20px;
+}
+
+.kartica {
+    border-radius: 20px
+}

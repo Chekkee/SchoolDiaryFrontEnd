@@ -1,0 +1,105 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.mainDashboard {
+    background-color: #dfedd6;
+    display: block;
+    min-height: 100px;
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 20px
+}
+
+.news {
+    background-color: #dfedd6;
+    border-color: #243e16;
+    width: 80%;
+    margin: 5px auto;
+    min-height: 100px;
+    border-radius: 20px;
+}
+
+.mapDiv {
+    background-color: #cbe8ba;
+    width: 90%;
+    min-height: 50px;
+    margin: 0px auto 10px auto;
+    border-radius: 20px;
+}
+
+.schoolInfo {
+    background-color: #dfedd6;
+    width: 80%;
+    margin: 10px auto;
+    min-height: 30px;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.schoolInfoText {
+    font-size: 1em;
+    line-height: 1.1em;
+    text-align: center;
+    margin: 0;
+}
+
+.mapImg {
+    border-radius: 10px;
+    margin: 10px auto;
+    width: 100%;
+}
+
+.oglas {
+    position: relative;
+    margin: 25px auto;
+    width: 85%;
+    background-color: white;
+    border: #243e16 1px solid;
+    border-radius: 10px;
+    height: 30%;
+    min-height: 150px;
+    text-align: center;
+}
+
+.externalLinks{
+    min-height: 250px;
+}
+
+.oglasPicture {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    position: relative;
+}
+
+.oglasBPicture {
+    width: 170px;
+    height: 100px;
+    margin: 10px auto;
+    position: relative;
+}
+
+.oglasB {
+    position: relative;
+    margin: 25px auto;
+    width: 85%;
+    background-color: white;
+    border: #243e16 1px solid;
+    border-radius: 10px;
+    height: 30%;
+    min-height: 110px;
+    text-align: center;
+}
+
+
+.oglasTitle {
+    color: #243e16;
+}
+
+.linksHeader {
+    padding-top: 10px;
+    text-align: center
+}

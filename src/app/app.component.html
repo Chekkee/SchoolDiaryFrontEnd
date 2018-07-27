@@ -1,0 +1,44 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="header">
+  <img class="headerPic" src="../assets/images/SchoolAvatar.jpg" routerLink="/dashboard">
+  <div class="headerTextDiv">
+    <h2 class="headerText">{{title}}</h2>
+  </div>
+</div>
+
+<div class="navigation row">
+  <div class="col-sm-1"></div>
+  <div class="smallNav col-sm-7">
+    <nav class="nav">
+      <div class="navPolje">
+        <a class="navLink" routerLink="/dashboard">Home</a>
+      </div>
+      <div class="navPolje">
+        <a class="navLink" routerLink="/employees">Employees</a>
+      </div>
+      <div class="navPolje">
+        <a *ngIf="!userService.user" class="navLink" routerLink="/webJournal">Web journal</a>
+        <div *ngIf="userService.user">
+          <a *ngIf="userService.user.role==='students'" class="navLink" routerLink="/students/{{userService.user.id}}">Web journal</a>
+          <a *ngIf="userService.user.role==='teachers'" class="navLink" routerLink="/teachers/{{userService.user.id}}">Web journal</a>
+          <a *ngIf="userService.user.role==='parents'" class="navLink" routerLink="/parents/{{userService.user.id}}">Web journal</a>
+          <a *ngIf="userService.user.role==='admins'" class="navLink" routerLink="/admins/{{userService.user.id}}">Web journal</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="col-sm-1"></div>
+  <div class="col-sm-2">
+    <div *ngIf="userService.user">
+      <span class="loggedIn">Logged in as {{userService.user.firstName}} {{userService.user.lastName}}</span>
+      <button class="btn btn-success logout btn-sm" (click)="logout()">logout</button>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+<div class="footer">
+  <p>Produced by Ceki</p>
+</div>

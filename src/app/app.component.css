@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    border: solid 1px #243e16;
+    background-color: #dfedd6;
+}
+
+.headerText {
+    display: inline-block;
+    text-align: center;
+    background-color: #dfedd6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.headerTextDiv {
+    width: calc(100% - 100px);
+    background-color: #dfedd6;
+    text-align: center;
+    position: relative;
+    margin: auto;
+}
+
+.headerPic {
+    width: 100px;
+    height: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+.headerPic:hover{
+    cursor: pointer;
+}
+
+.smallNav {
+    border: solid 2px #243e16;
+    min-height: 50px;
+    background-color: #dfedd6;
+    margin: auto auto;
+    border-radius: 15px;
+}
+
+.searchBox {
+    margin: auto;
+}
+
+.footer {
+    
+    bottom: 0;
+    width: 100%;
+    background-color: #243e16;
+    font-size: 0.75em;
+    text-align: center;
+    color: #dfedd6;
+}
+
+.navigation {
+    background-color: #cbe8ba;
+    min-height: 70px;
+    border: solid 1px #243e16;
+    border-top: 0px;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.navPolje{
+    width: 20%;
+    min-height: 40px;
+    text-align: center;
+    margin: 10px auto 0 auto;
+}
+
+.navLink{
+    color: #243e16;
+}
+
+.zez{
+    margin: 0 auto;
+    width: 80%;
+}
+
+.logout {
+    height: 30px;
+    margin: 20px auto;
+}
+
+.loggedIn {
+    color: #243e16;
+    margin-right: 10px;
+}

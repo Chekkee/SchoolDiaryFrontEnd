@@ -1,0 +1,46 @@
+<div class="mainDashboard">
+  <div class="row">
+    <div class="col-md-9 news">
+      <app-dashboard-item *ngFor='let new of AllNews' [news]="new"></app-dashboard-item>
+    </div>
+    <div class="col-md-3 rightBar">
+      <div class="externalLinks">
+        <h4 class="linksHeader">Other usefull local sites</h4>
+        <a href="http://www.ruma.rs/portal2/jupgrade/index.php?lang=en" target="_blank">
+          <div class="oglas">
+            <p class="oglasTitle">Official Ruma municipality site</p>
+            <img class="oglasPicture" src="../../../assets//images/dashboard/opstinaOglas.png">
+          </div>
+        </a>
+        <a href="http://borkovac.org/" target="_blank">
+          <div class="oglasB">
+            <p class="oglasTitle">Hotel Borkovac site</p>
+            <img class="oglasBPicture" src="../../../assets/images/dashboard/logo_beli.png">
+          </div>
+        </a>
+        <a href="http://rumatourism.com/sr/" target="_blank">
+          <div class="oglas">
+            <p class="oglasTitle">Ruma tourist organization</p>
+            <img class="oglasBPicture" src="../../../assets/images/dashboard/TuristickaOrganizacija.png">
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mapDiv row">
+  <div class="prazan col-sm-1"></div>
+  <div class="col-sm-6 schoolInfo">
+    <h4>About us</h4>
+    <br>
+    <p class="shollInfoText">
+      Elementary school "Ceda Ribic" is located in Ruma, 71 Main street. School is located nerby town center, next to two other
+      elementary schools "Veljko Dugosevic" and "Dusan Jerkovic". Location is show on the map.
+    </p>
+  </div>
+  <div class="prazan col-sm-1"></div>
+  <div class="map col-sm-3">
+    <img class="mapImg" src="../../../assets/images/SchoolMap.jpg">
+  </div>
+  <div class="prazan col-sm-1"></div>
+</div>

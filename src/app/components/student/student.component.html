@@ -1,0 +1,73 @@
+<div *ngIf="student" class="studentBigBox">
+  <div class="NameAndSurename">
+
+    <button *ngIf="(user.role === 'admins' || user.role === 'teachers')" class="btn btn-success btn-sm backButton" (click)="goBack()">Back</button>
+
+    <h1>Report for student</h1>
+    <div>
+      <h3>Name: {{student.firstName}} {{student.lastName}}</h3>
+      <h3>Username: {{student.userName}}</h3>
+      <h5>School year: {{student.year}}</h5>
+      <h5>Brith date: {{student.dateOfBirth}}</h5>
+    </div>
+    <br>
+    <h2>Parents information:</h2>
+    <div class="parentInfo" *ngFor="let parent of student.parentsInfo">
+      <p>Parent name: {{parent.parentFirstName}} {{parent.parentLastName}}</p>
+    </div>
+
+    <div>
+      <table class="table table-bordered">
+        <th>Students grades:</th>
+        <tr>
+          <td *ngIf="user.role === 'admins'">Options</td>
+          <td>Subject</td>
+          <td>Grades</td>
+        </tr>
+        <tr scope="row" class="" *ngFor="let subject of student.subjectsWithGrades">
+          <button type="button" *ngIf="user.role === 'admins'" class="btn btn-danger btn-sm" (click)="deleteSubjectFromStudent(subject)">Delete subject</button>
+          <div *ngIf="user.role === 'admins'">
+            <button type="button" (click)="getPossibleTeachers(subject)" class="btn btn-warning btn-sm">Change teacher</button>
+            <button *ngIf="possibleTeachers.length > 0" type="button" (click)="clearPossibleTeachers()" class="btn btn-warning btn-sm">Cancel</button>
+            <ul>
+              <div *ngFor="let teacher of possibleTeachers">
+                <li>{{teacher.firstName}} {{teacher.lastName}}</li>
+                <button type="button" (click)="putTeacherToSubject(subject, teacher)" class="btn btn-success btn-sm">Confirm selection</button>
+              </div>
+            </ul>
+          </div>
+          <td>{{subject.subjectName}}
+            <div *ngIf="user.role === 'admins'">
+              <a routerLink="subject/{{subject.subjectId}}/grade-add/add" class="btn btn-success btn-sm">Give new grade</a>
+            </div>
+          </td>
+          <td>
+            <div *ngFor="let grade of subject.grades">{{grade.gradeValue}}
+              <div *ngIf="user.role === 'admins'">
+                <button type="button" class="btn btn-danger btn-sm" (click)="deleteGradeFromStudent(subject, grade)">Delete grade</button>
+                <a class="btn btn-warning btn-sm" routerLink="/grade-edit/{{grade.id}}">Edit grade</a>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div *ngIf="user.role === 'admins'">
+      <button class="btn btn-success btn-sm" type="button" (click)="getRemainingSubjects(student.id)">Add subject</button>
+      <button class="btn btn-warning btn-sm" type="button" (click)="clearRemainingSubjects()">Clear reamining subjects</button>
+      <table *ngIf="student.remainingSubjects.length">
+        <th>Remaining subjects</th>
+        <tr>
+          <td>Subject name</td>
+          <td></td>
+        </tr>
+        <tr *ngFor="let subject of student.remainingSubjects">
+          <td>{{subject.subjectName}}</td>
+          <td>
+            <button type="button" class="btn btn-success btn-sm" (click)="addSubjectToStudent(subject)">Add subject to student</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+.studentBigBox {
+    width: 90%;
+    border-radius: 20px;
+    margin: 25px auto;
+    min-height: 300px;
+    border: #243e16;
+    background-color: #dfedd6;
+    color: #243e16;
+}
+
+.backButton {
+    margin: 20px;
+}

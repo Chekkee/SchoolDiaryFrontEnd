@@ -1,0 +1,165 @@
+<div *ngIf="admin" class="adminBigBox">
+  <h1>Welcome admin: {{admin.firstName}} {{admin.lastName}}</h1>
+  <div>
+    <div class="btn-group groupButtons" role="group" aria-label="Basic example">
+      <div class="optionButtonDiv">
+        <p>Student options</p>
+        <button type="button" class="btn btn-success" (click)="addToStudentOption()">Students</button>
+      </div>
+      <div class="optionButtonDiv">
+        <p>Teacher options</p>
+        <button type="button" class="btn btn-success" (click)="addToTeacherOption()">Teachers</button>
+      </div>
+      <div class="optionButtonDiv">
+        <p>Parents options</p>
+        <button type="button" class="btn btn-success" (click)="addToParentOption()">Parents</button>
+      </div>
+      <div class="optionButtonDiv">
+        <p>Subject options</p>
+        <button type="button" class="btn btn-success" (click)="addToSubjectOption()">Subjects</button>
+      </div>
+    </div>
+
+    <div *ngIf="studentOption%2" class="groupButtons">
+      <hr>
+      <h2>Students section</h2>
+      <div class="btn-group groupButtons" role="group" aria-label="Basic example">
+        <div class="studentButtonDiv">
+          <p>Show all students</p>
+          <button type="button" class="btn btn-success" (click)="getStudents()">All Students</button>
+          <div *ngIf="showAllStudents%2">
+            <table *ngIf="students">
+              <th>All students</th>
+              <tr *ngFor="let student of students">
+                <td>
+                  <a routerLink="/students/{{student.id}}">{{student.firstName}} {{student.lastName}}</a>
+                </td>
+                <td>
+                  <a class="btn btn-warning" routerLink="/student-edit/{{student.id}}">Edit student</a>
+                </td>
+                <td>
+                  <button class="btn btn-danger" (click)="deleteStudent(student)">Delete student</button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="studentButtonDiv">
+          <p>Add student</p>
+          <a [routerLink]="['/student-add', 'add' ]" class="btn btn-warning">Add student</a>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="teacherOption%2" class="groupButtons">
+      <hr>
+      <h2>Teachers section</h2>
+      <div class="btn-group groupButtons" role="group" aria-label="Basic example">
+        <div class="teacherButtonDiv">
+          <p>Show all teachers</p>
+          <button type="button" class="btn btn-success" (click)="getTeachers()">All Teachers</button>
+          <div *ngIf="showAllTeachers%2">
+            <table *ngIf="teachers">
+              <th>All teachers</th>
+              <tr *ngFor="let teacher of teachers">
+                <td>
+                  <a routerLink="/teachers/{{teacher.id}}">{{teacher.firstName}} {{teacher.lastName}}</a>
+                </td>
+                <td>
+                  <a class="btn btn-warning" routerLink="/teacher-edit/{{teacher.id}}">Edit teacher</a>
+                </td>
+                <td>
+                  <button class="btn btn-danger" (click)="deleteTeacher(teacher)">Delete teacher</button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="teacherButtonDiv">
+          <p>Add teacher</p>
+          <a [routerLink]="['/teacher-add', 'add' ]" class="btn btn-warning">Add teacher</a>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="parentOption%2" class="groupButtons">
+      <hr>
+      <h2>Parents section</h2>
+      <div class="btn-group groupButtons" role="group" aria-label="Basic example">
+        <div class="teacherButtonDiv">
+          <p>Show all parents</p>
+          <button type="button" class="btn btn-success" (click)="getParents()">All Parents</button>
+          <div *ngIf="showAllParents%2">
+            <table *ngIf="parents">
+              <th>All parents</th>
+              <tr *ngFor="let parent of parents">
+                <td>
+                  <a routerLink="/parents/{{parent.id}}">{{parent.firstName}} {{parent.lastName}}</a>
+                </td>
+                <td>
+                  <a class="btn btn-warning" routerLink="/parent-edit/{{parent.id}}">Edit parent</a>
+                </td>
+                <td>
+                  <button class="btn btn-danger" (click)="deleteParent(parent)">Delete parent</button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="teacherButtonDiv">
+          <p>Add parent</p>
+          <a [routerLink]="['/parent-add', 'add' ]" class="btn btn-warning">Add parent</a>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="subjectOption%2" class="groupButtons">
+      <hr>
+      <h2>Subjects section</h2>
+      <div class="btn-group groupButtons" role="group" aria-label="Basic example">
+        <div class="teacherButtonDiv">
+          <p>Show all parents</p>
+          <button type="button" class="btn btn-success" (click)="getSubjects()">All Subjects</button>
+          <div *ngIf="showAllSubjects%2">
+            <table *ngIf="subjects">
+              <th>All subjects</th>
+              <tr *ngFor="let subject of subjects">
+                <td>
+                  <a routerLink="/subject/{{subject.id}}">{{subject.subjectName}}</a>
+                </td>
+                <td>
+                  <a class="btn btn-warning" routerLink="/subject-edit/{{subject.id}}">Edit subject</a>
+                </td>
+                <td>
+                  <button class="btn btn-danger" (click)="deleteSubject(subject)">Delete subject</button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="teacherButtonDiv">
+          <p>Add parent</p>
+          <a [routerLink]="['/subject-add', 'add' ]" class="btn btn-warning">Add subject</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="logs">
+    <button class="btn btn-success btn-sm" (click)="getLogs()" type="button">Show Logs</button>
+    <button *ngIf="logs.length > 0" class="btn btn-warning btn-sm" (click)="closeLogs()" type="button">Hide Logs</button>
+    <table *ngIf="logs.length > 0">
+      <th>All logs</th>
+      <tr *ngFor="let log of logs">
+        <td>{{log}}
+          <br>
+          <br>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

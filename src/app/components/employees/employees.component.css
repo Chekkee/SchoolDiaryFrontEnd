@@ -1,0 +1,20 @@
+.cardDiv{
+    padding: 10px;
+    width: 75%;
+    margin: 15px auto;
+    background-color: #dfedd6;
+    color: #243e16;
+    border: 1px solid #243e16;
+    border-radius: 15px;
+}
+
+.professorBox {
+    padding: 10px;
+    width: 75%;
+    margin: 15px auto;
+    background-color: #dfedd6;
+    color: #243e16;
+    border: 1px solid #243e16;
+    border-radius: 15px;
+}
+

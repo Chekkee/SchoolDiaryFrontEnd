@@ -1,0 +1,38 @@
+<div *ngIf="student">
+  <div class="bigBox">
+    <form (submit)="editStudent()" ngNativeValidate>
+      <div class="form-group firstInputField">
+        <label class="label" for="firstName">First name</label>
+        <input type="text" class="form-control" id="firstName" placeholder="{{student.firstName}}" required tabindex="1" #firstName
+          [(ngModel)]="student.firstName" name="firstName">
+      </div>
+
+      <div class="form-group secondInputField">
+        <label class="label" for="lastName">Last name</label>
+        <input type="text" class="form-control" id="lastName" placeholder="{{student.lastName}}" required tabindex="1" #lastName
+          [(ngModel)]="student.lastName" name="lastName">
+      </div>
+
+      <div class="form-group firstInputField">
+        <label class="label" for="userName">Username name</label>
+        <input type="text" class="form-control" id="userName" placeholder="{{student.userName}}" required tabindex="1" #userName
+          [(ngModel)]="student.userName" name="userName">
+      </div>
+
+      <div class="form-group firstInputField">
+        <label class="label" for="year">Year</label>
+        <input type="number" min="1" max="8" class="form-control" id="year" placeholder="{{student.year}}" required tabindex="1"
+          #year [(ngModel)]="student.year" name="year">
+      </div>
+
+      <div class="form-group secondInputField">
+        <label class="label" for="dateOfBirth">Date of birth</label>
+        <input type="date" class="form-control" id="dateOfBirth" placeholder="{{student.dateOfBirth}}" required tabindex="1" #dateOfBirth
+          [(ngModel)]="student.dateOfBirth" name="dateOfBirth">
+      </div>
+
+      <button class="btn btn-success" type="submit" tabindex="6">Submit</button>
+      <button type="button" class="btn btn-warning" (click)="goBack()">Go back</button>
+    </form>
+  </div>
+</div>

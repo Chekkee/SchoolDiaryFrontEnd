@@ -1,0 +1,20 @@
+<div *ngIf="grade">
+  <div class="bigBox">
+    <form ngNativeValidate (submit)="addGrade()">
+
+      <input type="radio" name="grade" [value]="1" [(ngModel)]="grade.gradeValue">1<br>
+      <input type="radio" name="grade" [value]="2" [(ngModel)]="grade.gradeValue">2<br>
+      <input type="radio" name="grade" [value]="3" [(ngModel)]="grade.gradeValue">3<br>
+      <input type="radio" name="grade" [value]="4" [(ngModel)]="grade.gradeValue">4<br>
+      <input type="radio" name="grade" [value]="5" [(ngModel)]="grade.gradeValue">5<br>
+
+      <!-- <div class="form-group">
+        <label class="label" for="gradeValue">Grade value</label>
+        <input type="number" class="form-control" id="gradeValue" placeholder="Grade value" required tabindex="1" #gradeValue>
+      </div> -->
+
+      <button type="submit" class="btn btn-success" tabindex="2">Submit</button>
+      <button type="button" class="btn btn-warning" (click)="goBack()">Go back</button>
+    </form>
+  </div>
+</div>

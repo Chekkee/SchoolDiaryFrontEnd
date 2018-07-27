@@ -1,0 +1,39 @@
+<div *ngIf="teacher">
+  <div class="bigBox">
+
+    <form ngNativeValidate (submit)="editTeacher()">
+      <div class="form-group firstInputField">
+        <label class="label" for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName" placeholder="{{teacher.firstName}}" required tabindex="1" #firstName
+          [(ngModel)]="teacher.firstName" name="firstName">
+      </div>
+
+      <div class="form-group firstInputField">
+        <label class="label" for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName" placeholder="{{teacher.lastName}}" required tabindex="2" #lastName
+          [(ngModel)]="teacher.lastName" name="lastName">
+      </div>
+
+      <div class="form-group firstInputField">
+        <label class="label" for="userName">Username</label>
+        <input type="text" class="form-control" id="userName" placeholder="{{teacher.userName}}" required tabindex="3" #userName
+          [(ngModel)]="teacher.userName" name="userName">
+      </div>
+
+      <div class="form-group firstInputField">
+        <label class="label" for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="{{teacher.email}}" required tabindex="4" #email [(ngModel)]="teacher.email"
+          name="email">
+      </div>
+
+      <div class="form-group firstInputField">
+        <label class="label" for="mobilePhone">Mobile phone</label>
+        <input type="text" class="form-control" id="mobilePhone" placeholder="{{teacher.mobilePhone}}" required tabindex="5" #mobilePhone
+          [(ngModel)]="teacher.mobilePhone" name="mobilePhone">
+      </div>
+
+      <button class="btn btn-success" type="submit" tabindex="6">Submit</button>
+      <button class="btn btn-warning" type="button" (click)="goBack()">Go back</button>
+    </form>
+  </div>
+</div>

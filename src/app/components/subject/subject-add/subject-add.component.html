@@ -1,0 +1,22 @@
+<div class="bigBox">
+  <form ngNativeValidate (submit)="addSubject(subjectName.value, subjectFond.value, year.value)">
+
+    <div class="form-group firstInputField">
+      <label class="label" for="subjectName">Subject name</label>
+      <input type="text" class="form-control" id="subjectName" placeholder="Subject name" required tabindex="1" #subjectName>
+    </div>
+
+    <div class="form-group secondInputField">
+      <label class="label" for="subjectFond">Subject fond</label>
+      <input type="number" class="form-control" id="subjectFond" placeholder="Subject Fond" tabindex="2" required #subjectFond>
+    </div>
+
+    <div class="form-group secondInputField">
+      <label class="label" for="year">Username</label>
+      <input type="number" class="form-control" id="year" placeholder="Year" tabindex="3" required #year>
+    </div>
+
+    <button type="submit" class="btn btn-success" tabindex="4">Submit</button>
+    <button type="button" class="btn btn-warning" (click)="goBack()">Go back</button>
+  </form>
+</div>

@@ -1,0 +1,14 @@
+<div *ngIf="grade">
+  <div class="bigBox">
+
+    <form (submit)="editGrade()" ngNativeValidate>
+      <input type="radio" name="grade" [value]="1" [(ngModel)]="grade.gradeValue">1<br>
+      <input type="radio" name="grade" [value]="2" [(ngModel)]="grade.gradeValue">2<br>
+      <input type="radio" name="grade" [value]="3" [(ngModel)]="grade.gradeValue">3<br>
+      <input type="radio" name="grade" [value]="4" [(ngModel)]="grade.gradeValue">4<br>
+      <input type="radio" name="grade" [value]="5" [(ngModel)]="grade.gradeValue">5<br>
+      <button class="btn btn-success" type="submit" tabindex="1">Submit</button>
+      <button type="button" class="btn btn-warning" (click)="goBack()" tabindex="2">Go back</button>
+    </form>
+  </div>
+</div>

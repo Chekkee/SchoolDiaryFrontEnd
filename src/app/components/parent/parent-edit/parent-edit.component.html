@@ -1,0 +1,38 @@
+<div *ngIf="parent">
+  <div class="bigBox">
+    <form (submit)="editParent()">
+      <div class="form-group firstInputField">
+        <label class="label" for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName" placeholder="{{parent.firstName}}" required tabindex="1" #firstName
+          [(ngModel)]="parent.firstName" name="firstName">
+      </div>
+
+      <div class="form-group firstInputField">
+        <label class="label" for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName" placeholder="{{parent.lastName}}" required tabindex="2" #lastName [(ngModel)]="parent.lastName"
+          name="lastName">
+      </div>
+
+      <div class="form-group firstInputField">
+        <label class="label" for="userName">Username</label>
+        <input type="text" class="form-control" id="userName" placeholder="{{parent.userName}}" required tabindex="3" #userName [(ngModel)]="parent.userName"
+          name="userName">
+      </div>
+
+      <div class="form-group firstInputField">
+        <label class="label" for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="{{parent.email}}" required tabindex="4" #email [(ngModel)]="parent.email"
+          name="email">
+      </div>
+
+      <div class="form-group firstInputField">
+        <label class="label" for="mobilePhone">Mobile phone</label>
+        <input type="text" class="form-control" id="mobilePhone" placeholder="{{parent.mobilePhone}}" required tabindex="5" #mobilePhone
+          [(ngModel)]="parent.mobilePhone" name="mobilePhone">
+      </div>
+
+      <button class="btn btn-success" type="submit" tabindex="6">Submit</button>
+      <button type="button" class="btn btn-warning" (click)="goBack()">Dont save and go back</button>
+    </form>
+  </div>
+</div>

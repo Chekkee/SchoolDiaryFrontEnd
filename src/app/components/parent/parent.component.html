@@ -1,0 +1,58 @@
+<div *ngIf="parent" class="parentBigBox">
+  <div class="NameAndSurename">
+
+    <button *ngIf="user.role === 'admins'" class="btn btn-success btn-sm" (click)="goBack()">Back</button>
+
+    <h1>Parents information</h1>
+    <div>
+      <h3>Name: {{parent.firstName}} {{parent.lastName}}</h3>
+      <h5>Active email: {{parent.email}}</h5>
+      <h5>Active phone number: {{parent.mobilePhone}} </h5>
+    </div>
+  </div>
+  <br>
+  <h2>Students information:</h2>
+  <div *ngIf="parent.studentsWithSubjectsAndGrades">
+    <div *ngFor='let student of parent.studentsWithSubjectsAndGrades'>
+      <div>
+        <button *ngIf="user.role === 'admins'" class="btn btn-danger btn-sm" (click)="removeStudentFromParent(student)">Remove this student</button>
+        <h3>Report for {{student.firstName}} {{student.lastName}}</h3>
+        <h4>Year: {{student.year}}</h4>
+        <table class="table">
+          <th>Students grades:
+            <tr>
+              <td>Subject</td>
+              <td>Grades</td>
+            </tr>
+            <tr class="" *ngFor="let subject of student.subjectsWithGrades">
+              <td>{{subject.subjectName}}</td>
+              <td>
+                <span *ngFor="let grade of subject.grades">{{grade.gradeValue}}</span>
+              </td>
+            </tr>
+          </th>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="parent.studentsWithSubjectsAndGrades.length === 0">
+    <h2>This parent has no registered students</h2>
+  </div>
+  <div *ngIf="user.role === 'admins'">
+    <button type="button" class="btn btn-success btn-sm" (click)="showRemainingStudents()">Register student</button>
+    <button type="button" class="btn btn-warning btn-sm" (click)="hideRemainingStudents()">Hide remaining students</button>
+    <table *ngIf="remainingStudents.length > 0">
+      <th>Remaining students</th>
+      <tr>
+        <td>Student name and surename</td>
+        <td>Options</td>
+      </tr>
+      <tr *ngFor="let student of remainingStudents">
+        <td>{{student.firstName}} {{student.lastName}}</td>
+        <td>
+          <button type="button" class="btn btn-success btn-sm" (click)="addStudentToParent(student)">Add Student to parent</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
